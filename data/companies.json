@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Google",
+    "description": "Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware. It is considered one of the Big Five technology companies in the U.S. information technology industry, alongside Amazon, Apple, Meta, and Microsoft.",
+    "image": "https://example.com/images/google.png",
+    "link": "https://www.google.com"
+  },
+  {
+    "name": "Apple",
+    "description": "Apple Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, manufactures, and markets consumer electronics, computer software, and online services. Apple's hardware products include the iPhone, iPad, Mac, Apple Watch, and Apple TV. Apple software includes macOS, iOS, iPadOS, watchOS, and tvOS operating systems.",
+    "image": "https://example.com/images/apple.png",
+    "link": "https://www.apple.com"
+  },
+  {
+    "name": "Microsoft",
+    "description": "Microsoft Corporation is an American multinational technology company which produces computer software, consumer electronics, personal computers, and related services. Its best-known software products are the Windows line of operating systems, the Microsoft Office suite, and the Internet Explorer and Edge web browsers.",
+    "image": "https://example.com/images/microsoft.png",
+    "link": "https://www.microsoft.com"
+  },
+  {
+    "name": "Amazon",
+    "description": "Amazon.com, Inc. is an American multinational technology company that focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence. It is considered one of the Big Five companies in the U.S. information technology industry, along with Google, Apple, Meta, and Microsoft.",
+    "image": "https://example.com/images/amazon.png",
+    "link": "https://www.amazon.com"
+  },
+  {
+    "name": "Meta",
+    "description": "Meta Platforms, Inc., doing business as Meta and formerly known as Facebook, Inc., is an American multinational technology conglomerate based in Menlo Park, California. Meta is the parent organization of Facebook, Instagram, and WhatsApp, among other subsidiaries.",
+    "image": "https://example.com/images/meta.png",
+    "link": "https://www.meta.com"
+  },
+  {
+    "name": "Tesla",
+    "description": "Tesla, Inc. is an American electric vehicle and clean energy company based in Palo Alto, California. Tesla's current products include electric cars, battery energy storage from home to grid scale, solar panels and solar roof tiles, and other related products and services.",
+    "image": "https://example.com/images/tesla.png",
+    "link": "https://www.tesla.com"
+  },
+  {
+    "name": "Netflix",
+    "description": "Netflix, Inc. is an American subscription streaming service and production company. It offers a library of films and television series through distribution deals as well as its own productions, known as Netflix Originals.",
+    "image": "https://example.com/images/netflix.png",
+    "link": "https://www.netflix.com"
+  },
+  {
+    "name": "IBM",
+    "description": "International Business Machines Corporation (IBM) is an American multinational technology and consulting company headquartered in Armonk, New York. IBM produces and sells computer hardware, middleware, and software, and provides hosting and consulting services in areas ranging from mainframe computers to nanotechnology.",
+    "image": "https://example.com/images/ibm.png",
+    "link": "https://www.ibm.com"
+  },
+  {
+    "name": "Intel",
+    "description": "Intel Corporation is an American multinational corporation and technology company headquartered in Santa Clara, California. It is the world's largest and highest-valued semiconductor chip manufacturer based on revenue and is the developer of the x86 series of microprocessors, the processors found in most personal computers.",
+    "image": "https://example.com/images/intel.png",
+    "link": "https://www.intel.com"
+  },
+  {
+    "name": "Samsung",
+    "description": "Samsung Electronics Co., Ltd. is a South Korean multinational electronics company headquartered in Suwon, South Korea. It is the flagship company of the Samsung Group and has been the world's largest manufacturer of mobile phones and smartphones since 2011.",
+    "image": "https://example.com/images/samsung.png",
+    "link": "https://www.samsung.com"
+  },
+  {
+    "name": "Sony",
+    "description": "Sony Group Corporation is a Japanese multinational conglomerate corporation headquartered in Kōnan, Minato, Tokyo. Its diversified business includes consumer and professional electronics, gaming, entertainment, and financial services. The company is one of the leading manufacturers of electronic products for the consumer and professional markets.",
+    "image": "https://example.com/images/sony.png",
+    "link": "https://www.sony.com"
+  },
+  {
+    "name": "Nvidia",
+    "description": "Nvidia Corporation is an American multinational technology company incorporated in Delaware and based in Santa Clara, California. It designs graphics processing units (GPUs) for the gaming and professional markets, as well as system on chip units (SoCs) for the mobile computing and automotive market.",
+    "image": "https://example.com/images/nvidia.png",
+    "link": "https://www.nvidia.com"
+  },
+  {
+    "name": "Adobe",
+    "description": "Adobe Inc., originally called Adobe Systems Incorporated, is an American multinational computer software company headquartered in San Jose, California. It has historically focused upon the creation of multimedia and creativity software products, with a more recent foray towards digital marketing software.",
+    "image": "https://example.com/images/adobe.png",
+    "link": "https://www.adobe.com"
+  },
+  {
+    "name": "Salesforce",
+    "description": "Salesforce, Inc. is an American cloud-based software company headquartered in San Francisco, California. It provides customer relationship management (CRM) service and also sells a complementary suite of enterprise applications focused on customer service, marketing automation, analytics, and application development.",
+    "image": "https://example.com/images/salesforce.png",
+    "link": "https://www.salesforce.com"
+  },
+  {
+    "name": "Oracle",
+    "description": "Oracle Corporation is an American multinational computer technology corporation headquartered in Austin, Texas. The company sells database software and technology, cloud-engineered systems, and enterprise software products—particularly its own brands of database management systems.",
+    "image": "https://example.com/images/oracle.png",
+    "link": "https://www.oracle.com"
+  },
+  {
+    "name": "Spotify",
+    "description": "Spotify Technology S.A. is an international media services provider of Swedish origin. It is legally domiciled in Luxembourg and is headquartered in Stockholm, Sweden. The company's primary business is its audio streaming platform that provides DRM-protected music and podcasts from record labels and media companies.",
+    "image": "https://example.com/images/spotify.png",
+    "link": "https://www.spotify.com"
+  },
+  {
+    "name": "Uber",
+    "description": "Uber Technologies, Inc. is an American technology company. Its services include ride-hailing, food delivery (Uber Eats), package delivery, couriers, freight transportation, and a partnership with Lime scooters and bikes. It also has a map of how the city is moving and launching on-demand public transportation.",
+    "image": "https://example.com/images/uber.png",
+    "link": "https://www.uber.com"
+  },
+  {
+    "name": "Airbnb",
+    "description": "Airbnb, Inc. is an American company that operates an online marketplace for lodging, primarily homestays for vacation rentals, and tourism activities. Based in San Francisco, California, the platform is accessible via the website and mobile app.",
+    "image": "https://example.com/images/airbnb.png",
+    "link": "https://www.airbnb.com"
+  },
+  {
+    "name": "Zoom",
+    "description": "Zoom Video Communications, Inc. is an American communications technology company headquartered in San Jose, California. It provides video telephony and online chat services through a cloud-based peer-to-peer software platform and is used for teleconferencing, telecommuting, distance education, and social relations.",
+    "image": "https://example.com/images/zoom.png",
+    "link": "https://www.zoom.us"
+  },
+  {
+    "name": "Twitter",
+    "description": "Twitter, Inc. is an American communications company based in San Francisco, California. The company operates the microblogging and social networking service Twitter. Users post and interact with messages known as 'tweets'. Registered users can post, like, and retweet tweets, but unregistered users can only read them.",
+    "image": "https://example.com/images/twitter.png",
+    "link": "https://www.twitter.com"
+  }
+]

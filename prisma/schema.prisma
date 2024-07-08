@@ -1,0 +1,157 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["omitApi"]
+}
+
+enum Role {
+  User
+  Recruiter
+  Admin
+}
+
+model User {
+  id               String            @id @default(cuid())
+  fullName         String?
+  email            String            @unique
+  emailVerified    Boolean?
+  username         String            @unique
+  image            String?
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  password         String
+  role             Role
+  Application      Application[]
+  UserProfile      UserProfile?
+  RecruiterProfile RecruiterProfile?
+  UserSkill        UserSkill[]
+
+  @@map("users")
+}
+
+model UserProfile {
+  id            String   @id @default(cuid())
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId        String   @unique
+  instagramLink String?
+  xLink         String?
+  website       String?
+  aboutMe       String?
+  open          Boolean?
+  company       String?
+  location      String?
+  position      String?
+  resume        String?
+
+  @@map("userProfiles")
+}
+
+model RecruiterProfile {
+  id        String  @id @default(cuid())
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String  @unique
+  company   Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  companyId String
+
+  @@map("recruiterProfiles")
+}
+
+model Company {
+  id               String             @id @default(cuid())
+  name             String
+  description      String
+  image            String
+  link             String
+  Job              Job[]
+  RecruiterProfile RecruiterProfile[]
+
+  @@map("companies")
+}
+
+model Category {
+  id   String @id @default(cuid())
+  name String @unique
+  Job  Job[]
+
+  @@map("categories")
+}
+
+enum JobType {
+  FullTime
+  PartTime
+}
+
+model Job {
+  id               String        @id @default(cuid())
+  title            String
+  description      String
+  responsibilities String
+  whoYouAre        String
+  otherSkills      String
+  salary           Float
+  company          Company       @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  companyId        String
+  Application      Application[]
+  category         Category      @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId       String
+  postedOn         DateTime      @default(now())
+  type             JobType
+  applyBefore      DateTime
+  JobSkill         JobSkill[]
+
+  @@map("jobs")
+}
+
+enum ApplicationStatus {
+  Pending
+  Accepted
+  Rejected
+}
+
+model Application {
+  id        String            @id @default(cuid())
+  user      User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  job       Job               @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  jobId     String
+  appliedAt DateTime          @default(now())
+  status    ApplicationStatus
+
+  @@unique([userId, jobId])
+  @@map("applications")
+}
+
+model Skill {
+  id        String      @id @default(cuid())
+  name      String
+  UserSkill UserSkill[]
+  JobSkill  JobSkill[]
+
+  @@map("skills")
+}
+
+model UserSkill {
+  id      String @id @default(cuid())
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId  String
+  skill   Skill  @relation(fields: [skillId], references: [id], onDelete: Cascade)
+  skillId String
+
+  @@unique([userId, skillId])
+  @@map("userSkills")
+}
+
+model JobSkill {
+  id      String @id @default(cuid())
+  job     Job    @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  jobId   String
+  skill   Skill  @relation(fields: [skillId], references: [id], onDelete: Cascade)
+  skillId String
+
+  @@unique([jobId, skillId])
+  @@map("jobSkills")
+}

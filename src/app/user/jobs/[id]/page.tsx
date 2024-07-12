@@ -3,7 +3,7 @@ import JobCard from "../components/JobCard";
 import { BASE_API } from "@/constants";
 import JobOtherInfo from "./components/JobOtherInfo";
 import AboutRole from "./components/AboutRole";
-import Category from "./components/category";
+import Category from "./components/Category";
 import CompanyCard from "./components/CompanyCard";
 
 export default async function Job({ params }: { params: { id: string } }) {

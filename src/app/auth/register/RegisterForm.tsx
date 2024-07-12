@@ -10,20 +10,11 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import RolePick from "./RolePick";
 import { useRouter } from "next/navigation";
-
-const registerSchema = z.object({
-  role: z.enum(["User", "Recruiter"]),
-  email: z.string().email().min(2).max(50),
-  username: z.string().min(2).max(50),
-  password: z.string().min(8).max(50),
-});
-
-type RegisterType = z.infer<typeof registerSchema>;
+import { registerSchema, type RegisterType } from "@/types/zod";
 
 export default function RegisterForm() {
   const router = useRouter();

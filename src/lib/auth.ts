@@ -1,34 +1,38 @@
-import type { NextAuthOptions } from "next-auth";
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import { prisma } from "./client";
+import prisma from "@/lib/client";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { compare } from "bcrypt";
+import { NextAuthOptions } from "next-auth";
 
 export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma),
+  pages: {
+    signIn: "/auth/login",
+  },
   providers: [
     CredentialsProvider({
       name: "credentials",
       credentials: {
-        username: { label: "Username", type: "Text" },
-        password: { label: "Password", type: "Password" },
+        username: {},
+        password: {},
       },
-      async authorize(credentials, req) {
+      async authorize(credentials) {
         try {
           if (!credentials) {
             throw new Error("No credentials provided");
           }
           const user = await prisma.user.findUnique({
-            where: { username: credentials.username },
+            where: { username: credentials.username as string },
           });
           if (!user) {
             throw new Error("User not found");
           }
-          const match = compare(credentials.password, user.password);
+          const match = compare(credentials.password as string, user.password);
           if (!match) {
             throw new Error("Wrong password");
           }
-          return user as User;
+          return {
+            id: user.id,
+            role: user.role,
+          } as User;
         } catch (error) {
           return null;
         }
@@ -47,7 +51,6 @@ export const authOptions: NextAuthOptions = {
     },
     session: async function ({ session, token }) {
       session.user.role = token.role;
-      session.user.email = token.email;
       session.user.id = token.id;
       return session;
     },

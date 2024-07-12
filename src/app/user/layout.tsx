@@ -1,6 +1,7 @@
 import Sidebar from "./components/Sidebar";
-
-export default function UserLayout({
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+export default async function UserLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (

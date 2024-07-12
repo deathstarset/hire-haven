@@ -10,17 +10,11 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
-const loginSchema = z.object({
-  username: z.string().min(2).max(50),
-  password: z.string().min(8).max(50),
-});
-
-type LoginType = z.infer<typeof loginSchema>;
+import { loginSchema, type LoginType } from "@/types/zod";
 
 export default function LoginForm() {
   const router = useRouter();

@@ -1,7 +1,13 @@
 import { Button } from "@/components/ui/button";
 import RegisterForm from "./RegisterForm";
 import Link from "next/link";
-export default function Register() {
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+export default async function Register() {
+  const session = await getServerSession();
+  if (session) {
+    redirect("/user");
+  }
   return (
     <div className="w-1/2 flex flex-col gap-4">
       <h1 className="text-3xl font-semibold">Get more opportunities</h1>

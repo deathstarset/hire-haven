@@ -1,10 +1,9 @@
-import { BASE_API } from "@/constants";
 import JobCard from "./JobCard";
 import Link from "next/link";
+import { getJobs } from "@/requests/jobs";
 
 export default async function AllJobs() {
-  const response = await fetch(`${BASE_API}/api/jobs`);
-  const jobs: GetJobsResponse = await response.json();
+  const jobs = await getJobs();
   return (
     <div className="border-t flex gap-3">
       <div className="bg-red-100 w-1/4 h-full p-4">Hello</div>

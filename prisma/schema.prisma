@@ -113,13 +113,14 @@ enum ApplicationStatus {
 }
 
 model Application {
-  id        String            @id @default(cuid())
-  user      User              @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId    String
-  job       Job               @relation(fields: [jobId], references: [id], onDelete: Cascade)
-  jobId     String
-  appliedAt DateTime          @default(now())
-  status    ApplicationStatus
+  id                    String            @id @default(cuid())
+  user                  User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId                String
+  job                   Job               @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  jobId                 String
+  appliedAt             DateTime          @default(now())
+  status                ApplicationStatus @default(Pending)
+  additionalInformation String?
 
   @@unique([userId, jobId])
   @@map("applications")

@@ -1,11 +1,11 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { BASE_API } from "@/constants";
+import { getUserById } from "@/requests/users";
 export default async function UserGreet() {
   const session = await getServerSession(authOptions);
 
-  const response = await fetch(`${BASE_API}/api/users/${session?.user.id}`);
-  const user: GetUserResponse = await response.json();
+  const user = await getUserById(session?.user.id as string);
 
   return (
     <div className="flex flex-col gap-2">

@@ -43,3 +43,22 @@ type Job = {
   applyBefore: Date;
   type: JobType;
 };
+
+enum ApplicationStatus {
+  Pending = "Pending",
+  Accepted = "Accepted",
+  Rejected = "Rejected",
+}
+type Application = {
+  id: string;
+  user: User;
+  job: Job;
+  appliedAt: Date;
+  status: ApplicationStatus;
+  additionalInformation?: string;
+};
+type CreateApplication = {
+  userId: string;
+  jobId: string;
+  additionalInformation?: string;
+};

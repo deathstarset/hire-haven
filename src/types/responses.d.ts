@@ -3,3 +3,4 @@ type GetJobsResponse = Job[];
 type GetJobResponse = Job;
 type CreateApplicationResponse = Application;
 type GetApplicationsResponse = Application[];
+type GetCompaniesResponse = Company[];

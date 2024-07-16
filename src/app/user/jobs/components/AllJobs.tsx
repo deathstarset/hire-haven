@@ -1,12 +1,13 @@
 import JobCard from "./JobCard";
 import Link from "next/link";
 import { getJobs } from "@/requests/jobs";
+import JobsFilter from "./JobsFilter";
 
 export default async function AllJobs() {
   const jobs = await getJobs();
   return (
     <div className="border-t flex gap-3">
-      <div className="bg-red-100 w-1/4 h-full p-4">Hello</div>
+      <JobsFilter />
       <div className=" w-3/4 p-4 flex flex-col gap-4">
         <div>
           <h3 className="font-semibold text-xl">All Jobs</h3>

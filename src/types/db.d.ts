@@ -14,12 +14,6 @@ type User = {
   role: Role;
 };
 
-type Company = {
-  id: string;
-  name: string;
-  description: string;
-  link: string;
-};
 type Category = {
   id: string;
   name: string;
@@ -42,6 +36,14 @@ type Job = {
   postedOn: Date;
   applyBefore: Date;
   type: JobType;
+};
+
+type Company = {
+  id: string;
+  name: string;
+  description: string;
+  link: string;
+  Job: Job[];
 };
 
 enum ApplicationStatus {
